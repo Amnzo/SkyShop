@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load humanize %}
+
+    {% block content %}
+
+      <div class="container py-5">
+
+
+        <h1> Confirmation</h1>
+        <p>Votre commande a été passée. </p>
+        <p>Détails de la commande :</p>
+            
+            {% for l in lignes %}
+            <ul>
+            <li>Produit : {{ l.product }}-{{ l.product }}</li>
+            <li>Quantity : {{ l.quantity }}</li>
+            <li>Total Price : {{ l.total_price }}</li>
+
+           </ul>
+           {% endfor %}
+    
+           <div class="text-center py-5">
+         
+            <a href="{% url 'store:home' %}"><i class="fas fa-long-arrow-alt-left mr-2"> </i>Continuer les achats</a>
+          </div>
+        
+      </div>
+{% endblock content %}
